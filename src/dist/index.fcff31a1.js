@@ -950,12 +950,21 @@ var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(MainView, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "my-flix",
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 10
+                lineNumber: 11
             },
-            __self: this
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                __source: {
+                    fileName: "src/index.jsx",
+                    lineNumber: 12
+                },
+                __self: this,
+                children: "Good morning"
+            })
         }));
     }
 }
