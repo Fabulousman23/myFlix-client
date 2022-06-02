@@ -945,14 +945,14 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
-var _mainViewJsx = require("./componenets/MainView/main-view.jsx");
-var _mainViewJsxDefault = parcelHelpers.interopDefault(_mainViewJsx);
+var _mainView = require("./componenets/MainView/main-view");
+var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainViewJsxDefault.default, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 11
@@ -971,7 +971,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","./componenets/MainView/main-view.jsx":"1s459"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","./componenets/MainView/main-view":"1s459"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -25342,7 +25342,7 @@ class MainView extends _reactDefault.default.Component {
                         lineNumber: 7
                     },
                     __self: this,
-                    children: "Inceptio"
+                    children: "Inception"
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
