@@ -4,7 +4,7 @@ class MainView extends React.Component {
   render() {
     return (
       <div className="main-view">
-        <div>Inceptio</div>
+        <div>Inception</div>
         <div>The Dark Knight</div>
         <div>Gladiator</div>
       </div>
