@@ -1,6 +1,6 @@
-import react from "react";
+import React from "react";
 
-export class MainView extends react.Component {
+export class MainView extends React.Component {
   render() {
     return (
       <div className="main-view">
