@@ -25339,22 +25339,26 @@ class MainView extends _reactDefault.default.Component {
                     _id: 1,
                     Title: "Inception",
                     Description: "desc1...",
-                    ImagePath: "..."
+                    ImagePath: "https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/"
                 },
                 {
                     _id: 2,
                     Title: "The Shawshank Redemption",
                     Description: "desc2...",
-                    ImagePath: "..."
+                    ImagePath: "https://www.imdb.com/title/tt0111161/mediaviewer/rm10105600/?ref_=tt_ov_i"
                 },
                 {
                     _id: 3,
                     Title: "Gladiator",
                     Description: "desc3...",
-                    ImagePath: "..."
+                    ImagePath: "https://www.imdb.com/title/tt0172495/mediaviewer/rm2442542592/?ref_=tt_ov_i"
                 }, 
             ],
-            selectedMovie: null
+            setSelectedMovie (newSelectedMovie) {
+                this.setState({
+                    selectedMovie: newSelectedMovie
+                });
+            }
         };
     }
     render() {
@@ -25363,7 +25367,7 @@ class MainView extends _reactDefault.default.Component {
             movie: selectedMovie,
             __source: {
                 fileName: "src/componenets/MainView/main-view.jsx",
-                lineNumber: 34
+                lineNumber: 42
             },
             __self: this
         }));
@@ -25371,7 +25375,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/componenets/MainView/main-view.jsx",
-                lineNumber: 37
+                lineNumber: 45
             },
             __self: this,
             children: "The list is empty!"
@@ -25380,13 +25384,19 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/componenets/MainView/main-view.jsx",
-                lineNumber: 40
+                lineNumber: 48
             },
             __self: this,
             children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                    movie: movie,
+                    onMovieClick: (newSelectedMovie)=>{
+                        this.setState({
+                            selectedMovie: newSelectedMovie
+                        });
+                    },
                     __source: {
                         fileName: "src/componenets/MainView/main-view.jsx",
-                        lineNumber: 42
+                        lineNumber: 50
                     },
                     __self: this
                 }, movie._id)
@@ -25417,15 +25427,18 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie  } = this.props;
+        const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "movie-card",
+            onClick: ()=>{
+                onMovieClick(movie);
+            },
             __source: {
                 fileName: "src/componenets/MainView/movie-card/movie-card.jsx",
-                lineNumber: 6
+                lineNumber: 8
             },
             __self: this,
-            children: "some movie"
+            children: movie.Title
         }));
     }
 }
