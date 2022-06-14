@@ -25,11 +25,7 @@ export class MainView extends React.Component {
           ImagePath: "",
         },
       ],
-      setSelectedMovie(newSelectedMovie) {
-        this.setState({
-          selectedMovie: newSelectedMovie,
-        });
-      },
+      SelectedMovie: [null],
     };
   }
 
