@@ -1,4 +1,5 @@
 import React from "react";
+
 export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
@@ -6,7 +7,7 @@ export class MovieView extends React.Component {
     return (
       <div className="movie-view">
         <div className="movie-poster">
-          <img src={movie.ImagePath} />
+          <img src={movie.ImagePath} width="500" height="500" />
         </div>
         <div className="movie-title">
           <span className="label">Title: </span>
