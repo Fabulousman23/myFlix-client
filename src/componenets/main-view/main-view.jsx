@@ -14,9 +14,9 @@ export class MainView extends React.Component {
   }
   componentDidMount() {
     axios
-      .get("https://my-movie-app1234.heroku.com/movies")
+      .get("https://my-movie-app1234.herokuapp.com")
       .then((response) => {
-        this.state({
+        this.setState({
           movies: response.data,
         });
       })
@@ -33,7 +33,8 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, selectedMovie } = this.state;
-    if (movies.length === 0) return <div className="main-view" />;
+    if (movies.length === 0)
+      return <div className="main-view">The list is empty</div>;
     return (
       <div className="main-view">
         {selectedMovie ? (
