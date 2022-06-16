@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import * as images from "./data";
@@ -7,29 +8,23 @@ export class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [
-        {
-          _id: 1,
-          Title: "Inception",
-          Description: "desc1...",
-          ImagePath: images.inception,
-        },
-        {
-          _id: 2,
-          Title: "The Shawshank Redemption",
-          Description: "desc2...",
-          ImagePath: images.shawsank,
-        },
-        {
-          _id: 3,
-          Title: "Gladiator",
-          Description: "desc3...",
-          ImagePath: images.gladiator,
-        },
-      ],
+      movies: [],
       selectedMovie: null,
     };
   }
+  componentDidMount() {
+    axios
+      .get("https://my-movie-app1234.heroku.com/movies")
+      .then((response) => {
+        this.state({
+          movies: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie,
