@@ -3,11 +3,10 @@ import React from "react";
 export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
-
     return (
       <div className="movie-view">
         <div className="movie-poster">
-          <img src={movie.ImagePath} width="500" height="500" />
+          <img src={movie.Imagepath} width="500" height="600" />
         </div>
         <div className="movie-title">
           <span className="label">Title: </span>

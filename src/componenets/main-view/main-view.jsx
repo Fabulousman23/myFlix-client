@@ -16,14 +16,14 @@ export class MainView extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get("https://my-movie-app1234.herokuapp.com/movies");
-    console.log(response.data)
-      .then((response) => {
-        this.setState({
+    axios.get("https://my-movie-app1234.herokuapp.com/movies")
+    .then(response => {
+      console.log(response.data)
+      this.setState({
           movies: response.data,
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   }
@@ -41,9 +41,8 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user } = this.state;
-    if (!user)
-      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
+    const { movies, selectedMovie, user} = this.state;
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     if (movies.length === 0)
       return <div className="main-view">The list is empty</div>;
@@ -52,16 +51,16 @@ export class MainView extends React.Component {
         {selectedMovie ? (
           <MovieView
             movie={selectedMovie}
-            onBackClick={(newSelectedMovie) => {
+            onBackClick={newSelectedMovie => {
               this.setSelectedMovie(newSelectedMovie);
             }}
           />
         ) : (
-          movies.map((movie) => (
+          movies.map(movie => (
             <MovieCard
               key={movie._id}
               movie={movie}
-              onMovieClick={(movie) => {
+              onMovieClick={movie => {
                 this.setSelectedMovie(movie);
               }}
             />
