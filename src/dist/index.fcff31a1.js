@@ -948,15 +948,24 @@ var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _mainView = require("./componenets/main-view/main-view");
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 10
+                lineNumber: 12
             },
-            __self: this
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+                __source: {
+                    fileName: "src/index.jsx",
+                    lineNumber: 13
+                },
+                __self: this
+            })
         }));
     }
 }
@@ -970,7 +979,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./componenets/main-view/main-view":"cjrfk","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./componenets/main-view/main-view":"cjrfk","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Container":"2PRIq"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -30686,6 +30695,31 @@ const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , 
 FloatingLabel.displayName = 'FloatingLabel';
 exports.default = FloatingLabel;
 
-},{"classnames":"bOXOh","react":"6TuXu","./FormGroup":"gWNri","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"avObB"}],"jUTZ8":[function() {},{}]},["aGKSo","iH7vA","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"classnames":"bOXOh","react":"6TuXu","./FormGroup":"gWNri","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"avObB"}],"jUTZ8":[function() {},{}],"2PRIq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    fluid: false
+};
+const Container = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , fluid , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , className , ...props }, ref)=>{
+    const prefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'container');
+    const suffix = typeof fluid === 'string' ? `-${fluid}` : '-fluid';
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        className: _classnamesDefault.default(className, fluid ? `${prefix}${suffix}` : prefix)
+    }));
+});
+Container.displayName = 'Container';
+Container.defaultProps = defaultProps;
+exports.default = Container;
+
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"avObB"}]},["aGKSo","iH7vA","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.fcff31a1.js.map
