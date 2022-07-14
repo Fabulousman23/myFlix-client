@@ -3,6 +3,8 @@ import axios from "axios";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
+import { Row } from "react-bootstrap/Row";
+import { Col } from "react-bootstrap/Col";
 
 // import * as images from "./data";
 
@@ -49,12 +51,16 @@ export class MainView extends React.Component {
     return (
       <div className="main-view">
         {selectedMovie ? (
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={newSelectedMovie => {
-              this.setSelectedMovie(newSelectedMovie);
-            }}
-          />
+          <Row>
+            <Col md={8}>
+              <MovieView
+                movie={selectedMovie}
+                onBackClick={newSelectedMovie => {
+                  this.setSelectedMovie(newSelectedMovie);
+                }}
+              />
+            </Col>
+          </Row>
         ) : (
           movies.map(movie => (
             <MovieCard
