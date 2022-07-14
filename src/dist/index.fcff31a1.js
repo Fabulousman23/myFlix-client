@@ -25255,7 +25255,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_col.Col, {
-                    md: 3,
+                    md: 8,
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
                         lineNumber: 55
