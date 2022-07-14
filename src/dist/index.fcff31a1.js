@@ -25187,9 +25187,10 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _loginView = require("../login-view/login-view");
+var _registrationView = require("../registration-view/registration-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
-var _loginView = require("../login-view/login-view");
 var _row = require("react-bootstrap/Row");
 var _col = require("react-bootstrap/Col");
 class MainView extends _reactDefault.default.Component {
@@ -25228,7 +25229,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 47
+                lineNumber: 49
             },
             __self: this
         }));
@@ -25236,7 +25237,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 50
+                lineNumber: 52
             },
             __self: this,
             children: "The list is empty"
@@ -25245,14 +25246,14 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 52
+                lineNumber: 54
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_col.Col, {
                 md: 8,
                 __source: {
                     fileName: "src/componenets/main-view/main-view.jsx",
-                    lineNumber: 54
+                    lineNumber: 56
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25262,7 +25263,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
-                        lineNumber: 55
+                        lineNumber: 57
                     },
                     __self: this
                 })
@@ -25270,7 +25271,7 @@ class MainView extends _reactDefault.default.Component {
                     md: 3,
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
-                        lineNumber: 64
+                        lineNumber: 66
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25280,7 +25281,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/componenets/main-view/main-view.jsx",
-                            lineNumber: 65
+                            lineNumber: 67
                         },
                         __self: this
                     }, movie._id)
@@ -25295,7 +25296,11 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","../login-view/login-view":"v3HhG","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0"}],"iYoWk":[function(require,module,exports) {
+<<<<<<< Updated upstream
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","../login-view/login-view":"v3HhG","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Col":"fbam0","react-bootstrap/Row":"c0x1x","../registration-view/registration-view":"8e5Be"}],"iYoWk":[function(require,module,exports) {
+=======
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","../login-view/login-view":"v3HhG","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Col":"fbam0","react-bootstrap/Row":"c0x1x"}],"iYoWk":[function(require,module,exports) {
+>>>>>>> Stashed changes
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -30037,7 +30042,7 @@ function LoginView(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
         __source: {
             fileName: "src/componenets/login-view/login-view.jsx",
-            lineNumber: 18
+            lineNumber: 19
         },
         __self: this,
         children: [
@@ -30045,14 +30050,14 @@ function LoginView(props) {
                 controlId: "formUsername",
                 __source: {
                     fileName: "src/componenets/login-view/login-view.jsx",
-                    lineNumber: 19
+                    lineNumber: 20
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
-                            lineNumber: 20
+                            lineNumber: 21
                         },
                         __self: this,
                         children: "Username:"
@@ -30064,7 +30069,7 @@ function LoginView(props) {
                         ,
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
-                            lineNumber: 21
+                            lineNumber: 22
                         },
                         __self: this
                     })
@@ -30074,14 +30079,14 @@ function LoginView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/componenets/login-view/login-view.jsx",
-                    lineNumber: 24
+                    lineNumber: 25
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
-                            lineNumber: 25
+                            lineNumber: 26
                         },
                         __self: this,
                         children: "Password:"
@@ -30093,7 +30098,7 @@ function LoginView(props) {
                         ,
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
-                            lineNumber: 26
+                            lineNumber: 27
                         },
                         __self: this
                     })
@@ -30105,7 +30110,7 @@ function LoginView(props) {
                 onClick: handleSubmit,
                 __source: {
                     fileName: "src/componenets/login-view/login-view.jsx",
-                    lineNumber: 28
+                    lineNumber: 29
                 },
                 __self: this,
                 children: "Submit"
@@ -30745,7 +30750,39 @@ as: Component = 'div' , ...props }, ref)=>{
 Row.displayName = 'Row';
 exports.default = Row;
 
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"avObB"}],"jUTZ8":[function() {},{}],"2PRIq":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"avObB"}],"8e5Be":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c873 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c873.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _registrationViewScss = require("./registration-view.scss");
+var _s = $RefreshSig$();
+function RegistrationView(props) {
+    _s();
+    const [username, setUsername] = _react.useState('');
+    const [password, setPassword] = _react.useState('');
+    const [email, setEmail] = _react.useState('');
+}
+_s(RegistrationView, "aynwAZdNgcDEmsoEpp+mcQSpBRo=");
+_c = RegistrationView;
+var _c;
+$RefreshReg$(_c, "RegistrationView");
+
+  $parcel$ReactRefreshHelpers$c873.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"6TuXu","prop-types":"1tgq3","./registration-view.scss":"k3JRY","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"k3JRY":[function() {},{}],"jUTZ8":[function() {},{}],"2PRIq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
