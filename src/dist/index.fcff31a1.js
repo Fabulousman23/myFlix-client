@@ -25188,7 +25188,6 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _loginView = require("../login-view/login-view");
-var _registrationView = require("../registration-view/registration-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _row = require("react-bootstrap/Row");
@@ -25229,7 +25228,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 49
+                lineNumber: 48
             },
             __self: this
         }));
@@ -25237,7 +25236,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 52
+                lineNumber: 51
             },
             __self: this,
             children: "The list is empty"
@@ -25246,14 +25245,14 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 54
+                lineNumber: 53
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_col.Col, {
                 md: 8,
                 __source: {
                     fileName: "src/componenets/main-view/main-view.jsx",
-                    lineNumber: 56
+                    lineNumber: 55
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25263,7 +25262,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
-                        lineNumber: 57
+                        lineNumber: 56
                     },
                     __self: this
                 })
@@ -25271,7 +25270,7 @@ class MainView extends _reactDefault.default.Component {
                     md: 3,
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
-                        lineNumber: 66
+                        lineNumber: 65
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25281,7 +25280,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/componenets/main-view/main-view.jsx",
-                            lineNumber: 67
+                            lineNumber: 66
                         },
                         __self: this
                     }, movie._id)
@@ -25296,15 +25295,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","../login-view/login-view":"v3HhG","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Col":"fbam0","react-bootstrap/Row":"c0x1x","../registration-view/registration-view":"8e5Be"}],"iYoWk":[function(require,module,exports) {
-=======
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","../login-view/login-view":"v3HhG","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Col":"fbam0","react-bootstrap/Row":"c0x1x"}],"iYoWk":[function(require,module,exports) {
->>>>>>> Stashed changes
-=======
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","../login-view/login-view":"v3HhG","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Col":"fbam0","react-bootstrap/Row":"c0x1x","../registration-view/registration-view":"8e5Be"}],"iYoWk":[function(require,module,exports) {
->>>>>>> gh-pages
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","../login-view/login-view":"v3HhG","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -30754,39 +30745,7 @@ as: Component = 'div' , ...props }, ref)=>{
 Row.displayName = 'Row';
 exports.default = Row;
 
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"avObB"}],"8e5Be":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c873 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c873.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
-);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _registrationViewScss = require("./registration-view.scss");
-var _s = $RefreshSig$();
-function RegistrationView(props) {
-    _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const [email, setEmail] = _react.useState('');
-}
-_s(RegistrationView, "aynwAZdNgcDEmsoEpp+mcQSpBRo=");
-_c = RegistrationView;
-var _c;
-$RefreshReg$(_c, "RegistrationView");
-
-  $parcel$ReactRefreshHelpers$c873.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"6TuXu","prop-types":"1tgq3","./registration-view.scss":"k3JRY","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"k3JRY":[function() {},{}],"jUTZ8":[function() {},{}],"2PRIq":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"avObB"}],"jUTZ8":[function() {},{}],"2PRIq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
