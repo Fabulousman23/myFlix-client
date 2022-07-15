@@ -7,6 +7,7 @@ import { MovieView } from "../movie-view/movie-view";
 import { Row } from "react-bootstrap/Row";
 import { Col } from "react-bootstrap/Col";
 import { Container } from "react-bootstrap/Container";
+import { Navbar } from "react-bootstrap";
 
 
 
@@ -63,8 +64,12 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, selectedMovie, user, registered } = this.state;
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    // If the user is on register, show registration view and register
     if (!registered) { return <RegistrationView onRegisterIn={registered => this.onRegisterIn(registered)} /> }
+
+    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
     if (movies.length === 0)
       return <div className="main-view">The list is empty</div>;
     return (

@@ -14,23 +14,15 @@ export function RegistrationView(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.get("https://my-movie-app1234.herokuapp.com/movies", {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
-        })
-            .then((response) => {
-                const data = response.data;
-                console.log(data);
-            })
-            .catch(e => {
-                console.log('smth went wrong');
-            });
+        console.log(username, password, email, birthday);
+        /* Send a request to the server for authentication */
+        /* then call props.onLoggedIn(username) */
+        props.onRegisterIn(username);
     };
 
+
     return (
-        <form>
+        <Form>
             <label>
                 Username:
                 <input
@@ -63,10 +55,10 @@ export function RegistrationView(props) {
                     onChange={(e) => setBirthday(e.target.value)}
                 />
             </label>
-            <button type="submit" onClick={handleSubmit}>
+            <Button type="submit" onClick={handleSubmit}>
                 Submit
-            </button>
-        </form>
+            </Button>
+        </Form>
     );
 }
 RegistrationView.propTypes = {

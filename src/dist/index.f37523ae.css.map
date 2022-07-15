@@ -1,0 +1,1 @@
+{"mappings":";ACEA;EACE,OAHM","sources":["src/componenets/login-view/login-view.scss","src/index.scss"],"sourcesContent":[null,"$color: steelblue;\n\n.my-flix {\n  color: $color;\n}\n"],"names":[],"version":3,"file":"index.f37523ae.css.map","sourceRoot":"/__parcel_source_root/"}
