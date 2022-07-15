@@ -9,7 +9,7 @@ export class MovieCard extends React.Component {
 
     return (
       <Card>
-        <Card.Img variant="top" src={movie.ImagePath} />
+        <Card.Img variant="top" src={movie.Imagepath} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
@@ -19,3 +19,10 @@ export class MovieCard extends React.Component {
     );
   }
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    Title: PropTypes.string
+  }).isRequired,
+  onMovieClick: PropTypes.func.isRequired
+};
