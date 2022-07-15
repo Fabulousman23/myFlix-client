@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row, Navbar, Nav } from 'react-bootstrap';
-
+import Nav from '../main-view/nav';
 
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
@@ -23,6 +23,7 @@ export function RegistrationView(props) {
 
     return (
         <Form>
+            <Nav />
             <label>
                 Username:
                 <input
