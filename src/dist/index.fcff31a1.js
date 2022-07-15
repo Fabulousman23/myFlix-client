@@ -25261,60 +25261,51 @@ class MainView extends _reactDefault.default.Component {
             __self: this,
             children: "The list is empty"
         }));
-        else return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+        else return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
                 lineNumber: 76
             },
             __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default, {
-                    __source: {
-                        fileName: "src/componenets/main-view/main-view.jsx",
-                        lineNumber: 77
+            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                md: 8,
+                __source: {
+                    fileName: "src/componenets/main-view/main-view.jsx",
+                    lineNumber: 78
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
+                    movie: selectedMovie,
+                    onBackClick: (newSelectedMovie)=>{
+                        this.setSelectedMovie(newSelectedMovie);
                     },
-                    __self: this
-                }),
-                selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                    md: 8,
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
                         lineNumber: 79
                     },
+                    __self: this
+                })
+            }, movie._id) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                    md: 3,
+                    __source: {
+                        fileName: "src/componenets/main-view/main-view.jsx",
+                        lineNumber: 88
+                    },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                        movie: selectedMovie,
-                        onBackClick: (newSelectedMovie)=>{
-                            this.setSelectedMovie(newSelectedMovie);
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                        movie: movie,
+                        onMovieClick: (movie1)=>{
+                            this.setSelectedMovie(movie1);
                         },
-                        __source: {
-                            fileName: "src/componenets/main-view/main-view.jsx",
-                            lineNumber: 80
-                        },
-                        __self: this
-                    })
-                }, movie._id) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        md: 3,
                         __source: {
                             fileName: "src/componenets/main-view/main-view.jsx",
                             lineNumber: 89
                         },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                            movie: movie,
-                            onMovieClick: (movie1)=>{
-                                this.setSelectedMovie(movie1);
-                            },
-                            __source: {
-                                fileName: "src/componenets/main-view/main-view.jsx",
-                                lineNumber: 90
-                            },
-                            __self: this
-                        }, movie._id)
+                        __self: this
                     }, movie._id)
-                )
-            ]
+                }, movie._id)
+            )
         }));
     }
 }

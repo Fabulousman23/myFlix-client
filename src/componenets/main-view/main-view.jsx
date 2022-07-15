@@ -74,7 +74,6 @@ export class MainView extends React.Component {
     else
       return (
         <Row className="main-view justify-content-md-center">
-          <Nav />
           {selectedMovie ? (
             <Col md={8} key={movie._id}>
               <MovieView
