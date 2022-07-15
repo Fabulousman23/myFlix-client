@@ -6,6 +6,8 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { Row } from "react-bootstrap/Row";
 import { Col } from "react-bootstrap/Col";
+import { Container } from "react-bootstrap/Container";
+
 
 
 // import * as images from "./data";
@@ -33,6 +35,8 @@ export class MainView extends React.Component {
         console.log(error);
       });
   }
+  /*When a movie is clicked, this function is invoked and updates 
+  the state of the `selectedMovie` *property to that movie*/
 
   setSelectedMovie(newSelectedMovie) {
     this.setState({
@@ -40,22 +44,27 @@ export class MainView extends React.Component {
     });
   }
 
+  /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
+
   onLoggedIn(user) {
     this.setState({
       user,
     });
   }
-  onRegisterIn(register) {
+
+  // When a user successfully register, this function updates the user properties
+
+  onRegisterIn(registered) {
     this.setState({
-      register
+      registered
     });
   }
 
 
   render() {
-    const { movies, selectedMovie, user, register } = this.state;
+    const { movies, selectedMovie, user, registered } = this.state;
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-    if (!register) { return <RegistrationView onRegisterIn={register => this.onRegisterIn(register)} /> }
+    if (!registered) { return <RegistrationView onRegisterIn={registered => this.onRegisterIn(registered)} /> }
     if (movies.length === 0)
       return <div className="main-view">The list is empty</div>;
     return (

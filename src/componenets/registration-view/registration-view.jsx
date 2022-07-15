@@ -1,16 +1,32 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import { Form, Button, Card, CardGroup, Container, Col, Row, Navbar, Nav } from 'react-bootstrap';
 
-//user registration form taking necessary user details
+
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password, email, birthday);
-        props.onRegister(false);
+        axios.get("https://my-movie-app1234.herokuapp.com/movies", {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
+        })
+            .then((response) => {
+                const data = response.data;
+                console.log(data);
+            })
+            .catch(e => {
+                console.log('smth went wrong');
+            });
     };
 
     return (
@@ -53,3 +69,6 @@ export function RegistrationView(props) {
         </form>
     );
 }
+RegistrationView.propTypes = {
+    onRegisterIn: PropTypes.func.isRequired,
+};
