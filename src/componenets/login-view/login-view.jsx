@@ -11,16 +11,16 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.get("https://my-movie-app1234.herokuapp.com/movies", {
+    axios.post("https://my-movie-app1234.herokuapp.com/movies", {
       Username: username,
       Password: password,
     })
       .then((response) => {
         const data = response.data;
-        props.onLoggedIn(username);
+        props.onLoggedIn(data);
       })
       .catch((e) => {
-        console.log('no such user');
+        console.log('Pardon me, but no such user were found!');
       });
   };
 
