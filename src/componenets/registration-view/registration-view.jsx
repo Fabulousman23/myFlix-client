@@ -24,42 +24,47 @@ export function RegistrationView(props) {
     return (
         <Form>
             <Nav />
-            <label>
-                Username:
-                <input
+            <Form.Group>
+                <Form.Label>
+                    Username:</Form.Label>
+                <Form.Control
+                    placeholder="Enter Username"
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
+                    required
                 />
-            </label>
-            <label>
-                Password:
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-            </label>
-            <label>
-                Email:
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-            </label>
-            <label>
-                Birthday:
-                <input
-                    type="date"
-                    value={birthday}
-                    onChange={(e) => setBirthday(e.target.value)}
-                />
-            </label>
+
+            </Form.Group>
+
+            <Form.Label>
+                Password:</Form.Label>
+            <Form.Control
+                placeholder="Enter Password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <Form.Label>
+                Email:</Form.Label>
+            <Form.Control
+                placeholder="Your @email.please"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <Form.Label>
+                Birthday:</Form.Label>
+            <Form.Control
+                type="date"
+                value={birthday}
+                onChange={(e) => setBirthday(e.target.value)}
+                required
+            />
             <Button type="submit" onClick={handleSubmit}>
                 Submit
             </Button>
-        </Form>
+        </Form >
     );
 }
 RegistrationView.propTypes = {
