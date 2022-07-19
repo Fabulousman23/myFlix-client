@@ -54,9 +54,24 @@ export class MainView extends React.Component {
 
   // When a user successfully register, this function updates the user properties
 
-  onRegisterIn(registered) {
+  onRegisterIn({ username, password, email, birthday }) {
+    axios.post("https://my-movie-app1234.herokuapp.com/users", {
+      Username: username,
+      Password: password,
+      Birthday: birthday,
+      Email: email
+    })
+      .then((response) => {
+        const data = response.data;
+        alert('REG SUCSESFULL')
+        // props.onLoggedIn(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+
     this.setState({
-      registered
+      registered: true
     });
   }
 

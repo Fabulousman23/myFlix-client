@@ -25226,9 +25226,21 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     // When a user successfully register, this function updates the user properties
-    onRegisterIn(registered) {
+    onRegisterIn({ username , password , email , birthday  }) {
+        _axiosDefault.default.post("https://my-movie-app1234.herokuapp.com/users", {
+            Username: username,
+            Password: password,
+            Birthday: birthday,
+            Email: email
+        }).then((response)=>{
+            const data = response.data;
+            alert('REG SUCSESFULL');
+        // props.onLoggedIn(data);
+        }).catch((e)=>{
+            console.log(e);
+        });
         this.setState({
-            registered
+            registered: true
         });
     }
     render() {
@@ -25239,7 +25251,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 67
+                lineNumber: 82
             },
             __self: this
         }));
@@ -25248,7 +25260,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 70
+                lineNumber: 85
             },
             __self: this
         }));
@@ -25256,7 +25268,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 73
+                lineNumber: 88
             },
             __self: this,
             children: "The list is empty"
@@ -25265,14 +25277,14 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/componenets/main-view/main-view.jsx",
-                lineNumber: 76
+                lineNumber: 91
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 md: 8,
                 __source: {
                     fileName: "src/componenets/main-view/main-view.jsx",
-                    lineNumber: 78
+                    lineNumber: 93
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25282,7 +25294,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
-                        lineNumber: 79
+                        lineNumber: 94
                     },
                     __self: this
                 })
@@ -25290,7 +25302,7 @@ class MainView extends _reactDefault.default.Component {
                     md: 3,
                     __source: {
                         fileName: "src/componenets/main-view/main-view.jsx",
-                        lineNumber: 88
+                        lineNumber: 103
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25300,7 +25312,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/componenets/main-view/main-view.jsx",
-                            lineNumber: 89
+                            lineNumber: 104
                         },
                         __self: this
                     }, movie._id)
@@ -30061,7 +30073,7 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState("");
     const handleSubmit = (e)=>{
         e.preventDefault();
-        _axiosDefault.default.post("https://my-movie-app1234.herokuapp.com/movies", {
+        _axiosDefault.default.post("https://my-movie-app1234.herokuapp.com/login", {
             Username: username,
             Password: password
         }).then((response)=>{
@@ -33854,7 +33866,12 @@ function RegistrationView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password, email, birthday);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onRegisterIn(username);
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onRegisterIn({
+            username,
+            password,
+            email,
+            birthday
+        });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
         __source: {
