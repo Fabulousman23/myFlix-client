@@ -30778,20 +30778,20 @@ function Nav() {
                 bg: "light",
                 __source: {
                     fileName: "src/componenets/main-view/nav.jsx",
-                    lineNumber: 7
+                    lineNumber: 8
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
                     __source: {
                         fileName: "src/componenets/main-view/nav.jsx",
-                        lineNumber: 8
+                        lineNumber: 9
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
                         href: "#home",
                         __source: {
                             fileName: "src/componenets/main-view/nav.jsx",
-                            lineNumber: 9
+                            lineNumber: 10
                         },
                         __self: this,
                         children: "My Movie App"
