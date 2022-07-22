@@ -50,6 +50,8 @@ export class MainView extends React.Component {
     this.setState({
       user,
     });
+    localStorage.setItem('token', user.token);
+    localStorage.setItem('user', user.user.Username);
   }
 
   // When a user successfully register, this function updates the user properties
