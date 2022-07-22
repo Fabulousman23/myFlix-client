@@ -1,15 +1,20 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 
-function Nav() {
+function Nav1() {
     return (
         <>
             <Navbar bg="light">
                 <Container>
                     <Navbar.Brand href="#home">My Movie App</Navbar.Brand>
-                    <Navbar.Brand href="#LoginView">Log in</Navbar.Brand>
-                    <Navbar.Brand href="#RegistrationView">Sign Up</Navbar.Brand>
+                    <Nav.Item>
+                        <Nav.Link href="LoginView">Log In</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="RegistratioView">Sign Up</Nav.Link>
+                    </Nav.Item>
                 </Container>
             </Navbar>
 
@@ -17,4 +22,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default Nav1;
