@@ -30075,14 +30075,14 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState("");
     const handleSubmit = (e)=>{
         e.preventDefault();
-        _axiosDefault.default.post("https://my-movie-app1234.herokuapp.com/login", {
+        _axiosDefault.default.get("https://my-movie-app1234.herokuapp.com/movies", {
             Username: username,
             Password: password
         }).then((response)=>{
             const data = response.data;
-            props.onLoggedIn(data);
+            props.onLoggedIn(username);
         }).catch((e1)=>{
-            console.log('Pardon me, but no such user were found!');
+            console.log('no such user');
         });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
