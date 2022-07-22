@@ -66,7 +66,7 @@ export class MainView extends React.Component {
       .then((response) => {
         const data = response.data;
         alert('REG SUCSESFULL')
-        // props.onLoggedIn(data);
+        props.onLoggedIn(data);
       })
       .catch((e) => {
         console.log(e);
