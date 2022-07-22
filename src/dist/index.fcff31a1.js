@@ -30844,6 +30844,22 @@ function Nav1() {
                                 __self: this,
                                 children: "Sign Up"
                             })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                            __source: {
+                                fileName: "src/componenets/main-view/nav.jsx",
+                                lineNumber: 18
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                href: "LogOut",
+                                __source: {
+                                    fileName: "src/componenets/main-view/nav.jsx",
+                                    lineNumber: 19
+                                },
+                                __self: this,
+                                children: "Log Out"
+                            })
                         })
                     ]
                 })

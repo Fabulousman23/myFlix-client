@@ -15,6 +15,9 @@ function Nav1() {
                     <Nav.Item>
                         <Nav.Link href="RegistratioView">Sign Up</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="LogOut">Log Out</Nav.Link>
+                    </Nav.Item>
                 </Container>
             </Navbar>
 
