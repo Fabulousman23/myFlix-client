@@ -30795,21 +30795,41 @@ function Nav() {
                     lineNumber: 8
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
                     __source: {
                         fileName: "src/componenets/main-view/nav.jsx",
                         lineNumber: 9
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
-                        href: "#home",
-                        __source: {
-                            fileName: "src/componenets/main-view/nav.jsx",
-                            lineNumber: 10
-                        },
-                        __self: this,
-                        children: "My Movie App"
-                    })
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
+                            href: "#home",
+                            __source: {
+                                fileName: "src/componenets/main-view/nav.jsx",
+                                lineNumber: 10
+                            },
+                            __self: this,
+                            children: "My Movie App"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
+                            href: "#LoginView",
+                            __source: {
+                                fileName: "src/componenets/main-view/nav.jsx",
+                                lineNumber: 11
+                            },
+                            __self: this,
+                            children: "Log in"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
+                            href: "#RegistrationView",
+                            __source: {
+                                fileName: "src/componenets/main-view/nav.jsx",
+                                lineNumber: 12
+                            },
+                            __self: this,
+                            children: "Sign Up"
+                        })
+                    ]
                 })
             })
         ]
