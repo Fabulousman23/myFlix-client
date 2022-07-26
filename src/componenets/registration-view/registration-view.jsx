@@ -23,7 +23,7 @@ export function RegistrationView(props) {
 
     return (
         <Form>
-            <Nav1 />
+
             <Form.Group>
                 <Form.Label>
                     Username:</Form.Label>
