@@ -142,6 +142,8 @@ export class MainView extends React.Component {
                   // goBack={history.goBack}
                   // handleFavorite={this.handleFavorite}
                   movies={this.state.movies}
+                  movieId={match.params.movieId}
+                  goBack={history.goBack}
                 />
               )}
             />

@@ -25338,7 +25338,9 @@ class MainView extends _reactDefault.default.Component {
                                         // isFavorite={favoriteMovies.includes(match.params.movieId)}
                                         // goBack={history.goBack}
                                         // handleFavorite={this.handleFavorite}
-                                        movies: this.state.movies
+                                        movies: this.state.movies,
+                                        movieId: match.params.movieId,
+                                        goBack: history.goBack
                                     })
                                 ,
                                 __source: {
@@ -25359,7 +25361,7 @@ class MainView extends _reactDefault.default.Component {
                                 ,
                                 __source: {
                                     fileName: "src/componenets/main-view/main-view.jsx",
-                                    lineNumber: 149
+                                    lineNumber: 151
                                 },
                                 __self: this
                             }),
@@ -25375,7 +25377,7 @@ class MainView extends _reactDefault.default.Component {
                                 ,
                                 __source: {
                                     fileName: "src/componenets/main-view/main-view.jsx",
-                                    lineNumber: 166
+                                    lineNumber: 168
                                 },
                                 __self: this
                             }),
@@ -25394,7 +25396,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/componenets/main-view/main-view.jsx",
-                                    lineNumber: 183
+                                    lineNumber: 185
                                 },
                                 __self: this
                             })
@@ -32384,12 +32386,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieView extends _reactDefault.default.Component {
     state = {
-        movie: this.props.movies.find((m)=>m._id === match.params.movieId
+        movie: this.props.movies.find((m)=>m._id === this.props.movieId
         )
     };
     render() {
         console.log(this.props);
-        const { movies , onBackClick  } = this.props;
+        const { movies , goBack  } = this.props;
         const { movie  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "movie-view",
@@ -32475,7 +32477,7 @@ class MovieView extends _reactDefault.default.Component {
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("button", {
                     onClick: ()=>{
-                        onBackClick(null);
+                        goBack();
                     },
                     __source: {
                         fileName: "src/componenets/movie-view/movie-view.jsx",

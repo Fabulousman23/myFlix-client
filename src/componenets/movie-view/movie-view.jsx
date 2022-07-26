@@ -3,11 +3,11 @@ import React from "react";
 
 export class MovieView extends React.Component {
   state = {
-    movie: this.props.movies.find((m) => m._id === match.params.movieId)
+    movie: this.props.movies.find((m) => m._id === this.props.movieId)
   }
   render() {
     console.log(this.props)
-    const { movies, onBackClick } = this.props;
+    const { movies, goBack } = this.props;
     const { movie } = this.state;
     return (
       <div className="movie-view">
@@ -24,7 +24,7 @@ export class MovieView extends React.Component {
         </div>
         <button
           onClick={() => {
-            onBackClick(null);
+            goBack();
           }}
         >
           Back
