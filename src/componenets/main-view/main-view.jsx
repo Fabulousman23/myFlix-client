@@ -137,10 +137,11 @@ export class MainView extends React.Component {
               path="/movies/:movieId"
               render={({ match, history }) => (
                 <MovieView
-                  movie={movies.find((m) => m._id === match.params.movieId)}
-                  isFavorite={favoriteMovies.includes(match.params.movieId)}
-                  goBack={history.goBack}
-                  handleFavorite={this.handleFavorite}
+                  // movie={movies.find((m) => m._id === match.params.movieId)}
+                  // isFavorite={favoriteMovies.includes(match.params.movieId)}
+                  // goBack={history.goBack}
+                  // handleFavorite={this.handleFavorite}
+                  movies={this.state.movies}
                 />
               )}
             />

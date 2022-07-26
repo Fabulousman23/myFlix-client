@@ -2,8 +2,13 @@ import React from "react";
 
 
 export class MovieView extends React.Component {
+  state = {
+    movie: this.props.movies.find((m) => m._id === match.params.movieId)
+  }
   render() {
-    const { movie, onBackClick } = this.props;
+    console.log(this.props)
+    const { movies, onBackClick } = this.props;
+    const { movie } = this.state;
     return (
       <div className="movie-view">
         <div className="movie-poster">
