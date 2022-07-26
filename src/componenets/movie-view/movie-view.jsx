@@ -3,7 +3,9 @@ import React from "react";
 
 export class MovieView extends React.Component {
   state = {
-    movie: this.props.movies.find((m) => m._id === this.props.movieId)
+    movie: this.props.movies.find((m) => m._id === this.props.movieId),
+    isFavorite: true
+    // isFavorite : {favoriteMovies.includes(match.params.movieId)
   }
   render() {
     console.log(this.props)
@@ -28,7 +30,10 @@ export class MovieView extends React.Component {
           }}
         >
           Back
-        </button>
+        </button> <br />
+        {
+          this.state.isFavorite ? "Yes" : "No"
+        }
       </div>
     );
   }
