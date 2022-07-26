@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
-import Nav1 from "../main-view/nav";
-import { Link } from "react-router-dom";
-
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -12,13 +9,16 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.get("https://my-movie-app1234.herokuapp.com/movies", {
+    axios.post("https://my-movie-app1234.herokuapp.com/login", {
       Username: username,
       Password: password,
     })
       .then((response) => {
         const data = response.data;
-        props.onLoggedIn(username);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', data.user.Username);
+        window.location.reload()
+        // props.onLoggedIn(data);
       })
       .catch((e) => {
         console.log('no such user');

@@ -57,13 +57,6 @@ export class MainView extends React.Component {
 
   /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
 
-  onLoggedIn(user) {
-    this.setState({
-      user,
-    });
-    localStorage.setItem('token', user.token);
-    localStorage.setItem('user', user.user.Username);
-  }
   onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -119,7 +112,7 @@ export class MainView extends React.Component {
               path="/"
               render={() => {
                 // If there's no user, the LoginView is rendered.
-                if (!user) {
+                if (!localStorage.getItem('token')) {
                   return <LoginView onLoggedIn={this.onLoggedIn} />;
                 }
                 // If a user is logged the Movies are rendered as MovieCards

@@ -17,7 +17,10 @@ function Nav1() {
                         <Nav.Link href="register">Sign Up</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/">Log Out</Nav.Link>
+                        <Nav.Link href="#" onClick={() => {
+                            localStorage.clear()
+                            window.location.replace("/")
+                        }}>Log Out</Nav.Link>
                     </Nav.Item>
                 </Container>
             </Navbar>
