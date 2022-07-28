@@ -18,7 +18,7 @@ export function LoginView(props) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', data.user.Username);
         window.location.reload()
-        // props.onLoggedIn(data);
+        props.onLoggedIn(data);
       })
       .catch((e) => {
         console.log('no such user');
