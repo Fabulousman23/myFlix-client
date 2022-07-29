@@ -77,7 +77,6 @@ export class MainView extends React.Component {
       .then((response) => {
         const data = response.data;
         alert('REG SUCSESFULL')
-        props.onRegisterIn(data);
         window.location.replace("/")
       })
       .catch((e) => {
