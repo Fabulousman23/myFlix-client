@@ -130,7 +130,7 @@ export class MainView extends React.Component {
 
             <Route
               path="/register"
-              render={() => <RegistrationView registered={this.onRegisterIn} />}
+              render={() => <RegistrationView onRegisterIn={this.onRegisterIn} />}
             />
 
             <Route

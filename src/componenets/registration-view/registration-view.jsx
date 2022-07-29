@@ -64,6 +64,9 @@ export function RegistrationView(props) {
             <Button type="submit" onClick={handleSubmit}>
                 Submit
             </Button>
+            <Button type="button" onClick={() => window.location.replace("/")}>
+                Log in
+            </Button>
         </Form >
     );
 }

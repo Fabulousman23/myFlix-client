@@ -5,17 +5,30 @@ import { Link } from 'react-router-dom';
 
 
 function Nav1() {
-    return (
+    if (!localStorage.getItem('token')) {
+        return (
+
+            <>
+                <Navbar bg="light">
+                    <Container>
+                        <Navbar.Brand href="LoginView">My Movie App</Navbar.Brand>
+                        <Nav.Item>
+                            <Nav.Link href="/">Log In</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link href="register">Sign Up</Nav.Link>
+                        </Nav.Item>
+                    </Container>
+                </Navbar>
+
+            </>)
+    }
+    else return (
+
         <>
             <Navbar bg="light">
                 <Container>
                     <Navbar.Brand href="LoginView">My Movie App</Navbar.Brand>
-                    <Nav.Item>
-                        <Nav.Link href="/">Log In</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="register">Sign Up</Nav.Link>
-                    </Nav.Item>
                     <Nav.Item>
                         <Nav.Link href="#" onClick={() => {
                             localStorage.clear()
