@@ -25194,7 +25194,10 @@ var _movieView = require("../movie-view/movie-view");
 var _reactBootstrap = require("react-bootstrap");
 var _nav = require("./nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
+<<<<<<< HEAD
 var _reactRouterDom = require("react-router-dom");
+=======
+>>>>>>> main
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -25231,9 +25234,13 @@ class MainView extends _reactDefault.default.Component {
             selectedMovie: newSelectedMovie
         });
     }
+<<<<<<< HEAD
     /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/ onLoggedOut() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+=======
+    /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/ onLoggedIn(user) {
+>>>>>>> main
         this.setState({
             user: null
         });
@@ -25255,8 +25262,29 @@ class MainView extends _reactDefault.default.Component {
         this.setState({
             registered: true
         });
+        localStorage.setItem('token', user.token);
+        localStorage.setItem('user', user.user.Username);
+    }
+    // When a user successfully register, this function updates the user properties
+    onRegisterIn({ username , password , email , birthday  }) {
+        _axiosDefault.default.post("https://my-movie-app1234.herokuapp.com/users", {
+            Username: username,
+            Password: password,
+            Birthday: birthday,
+            Email: email
+        }).then((response)=>{
+            const data = response.data;
+            alert('REG SUCSESFULL');
+        // props.onLoggedIn(data);
+        }).catch((e)=>{
+            console.log(e);
+        });
+        this.setState({
+            registered: true
+        });
     }
     render() {
+<<<<<<< HEAD
         const { movies , user , registered  } = this.state;
         // // If the user is on register, show registration view and register
         // if (!registered) { return <RegistrationView onRegisterIn={registered => this.onRegisterIn(registered)} /> }
@@ -25403,6 +25431,82 @@ class MainView extends _reactDefault.default.Component {
                     })
                 })
             ]
+=======
+        const { movies , selectedMovie , user , registered  } = this.state;
+        // If the user is on register, show registration view and register
+        if (!registered) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
+            onRegisterIn: (registered1)=>this.onRegisterIn(registered1)
+            ,
+            __source: {
+                fileName: "src/componenets/main-view/main-view.jsx",
+                lineNumber: 84
+            },
+            __self: this
+        }));
+        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+            ,
+            __source: {
+                fileName: "src/componenets/main-view/main-view.jsx",
+                lineNumber: 87
+            },
+            __self: this
+        }));
+        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/componenets/main-view/main-view.jsx",
+                lineNumber: 90
+            },
+            __self: this,
+            children: "The list is empty"
+        }));
+        else return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+            className: "main-view justify-content-md-center",
+            __source: {
+                fileName: "src/componenets/main-view/main-view.jsx",
+                lineNumber: 93
+            },
+            __self: this,
+            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                md: 8,
+                __source: {
+                    fileName: "src/componenets/main-view/main-view.jsx",
+                    lineNumber: 95
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
+                    movie: selectedMovie,
+                    onBackClick: (newSelectedMovie)=>{
+                        this.setSelectedMovie(newSelectedMovie);
+                    },
+                    __source: {
+                        fileName: "src/componenets/main-view/main-view.jsx",
+                        lineNumber: 96
+                    },
+                    __self: this
+                })
+            }, movies._id) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                    md: 3,
+                    __source: {
+                        fileName: "src/componenets/main-view/main-view.jsx",
+                        lineNumber: 105
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                        movie: movie,
+                        onMovieClick: (movie1)=>{
+                            this.setSelectedMovie(movie1);
+                        },
+                        __source: {
+                            fileName: "src/componenets/main-view/main-view.jsx",
+                            lineNumber: 106
+                        },
+                        __self: this
+                    }, movie._id)
+                }, movie._id)
+            )
+>>>>>>> main
         }));
     }
 }
@@ -25412,7 +25516,11 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< HEAD
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../registration-view/registration-view":"8e5Be","../login-view/login-view":"v3HhG","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","react-bootstrap":"h2YVd","./nav":"eY3af","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"iYoWk":[function(require,module,exports) {
+=======
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../registration-view/registration-view":"8e5Be","../login-view/login-view":"v3HhG","../movie-card/movie-card":"9briy","../movie-view/movie-view":"bj35h","react-bootstrap":"h2YVd","./nav":"eY3af","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"iYoWk":[function(require,module,exports) {
+>>>>>>> main
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -28643,6 +28751,16 @@ function RegistrationView(props) {
         },
         __self: this,
         children: [
+<<<<<<< HEAD
+=======
+            /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default, {
+                __source: {
+                    fileName: "src/componenets/registration-view/registration-view.jsx",
+                    lineNumber: 26
+                },
+                __self: this
+            }),
+>>>>>>> main
             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                 __source: {
                     fileName: "src/componenets/registration-view/registration-view.jsx",
@@ -28742,6 +28860,7 @@ function RegistrationView(props) {
                 },
                 __self: this,
                 children: "Submit"
+<<<<<<< HEAD
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                 type: "button",
@@ -28753,6 +28872,8 @@ function RegistrationView(props) {
                 },
                 __self: this,
                 children: "Log in"
+=======
+>>>>>>> main
             })
         ]
     }));
@@ -41623,29 +41744,49 @@ var _navbar = require("react-bootstrap/Navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _nav = require("react-bootstrap/Nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
+<<<<<<< HEAD
 var _reactRouterDom = require("react-router-dom");
 function Nav1() {
     if (!localStorage.getItem('token')) return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+=======
+function Nav1() {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+>>>>>>> main
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
                 bg: "light",
                 __source: {
                     fileName: "src/componenets/main-view/nav.jsx",
+<<<<<<< HEAD
                     lineNumber: 12
+=======
+                    lineNumber: 9
+>>>>>>> main
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
                     __source: {
                         fileName: "src/componenets/main-view/nav.jsx",
+<<<<<<< HEAD
                         lineNumber: 13
+=======
+                        lineNumber: 10
+>>>>>>> main
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
+<<<<<<< HEAD
                             href: "LoginView",
                             __source: {
                                 fileName: "src/componenets/main-view/nav.jsx",
                                 lineNumber: 14
+=======
+                            href: "#home",
+                            __source: {
+                                fileName: "src/componenets/main-view/nav.jsx",
+                                lineNumber: 11
+>>>>>>> main
                             },
                             __self: this,
                             children: "My Movie App"
@@ -41653,17 +41794,44 @@ function Nav1() {
                         /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
                             __source: {
                                 fileName: "src/componenets/main-view/nav.jsx",
+<<<<<<< HEAD
+=======
+                                lineNumber: 12
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                href: "LoginView",
+                                __source: {
+                                    fileName: "src/componenets/main-view/nav.jsx",
+                                    lineNumber: 13
+                                },
+                                __self: this,
+                                children: "Log In"
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                            __source: {
+                                fileName: "src/componenets/main-view/nav.jsx",
+>>>>>>> main
                                 lineNumber: 15
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+<<<<<<< HEAD
                                 href: "/",
+=======
+                                href: "RegistratioView",
+>>>>>>> main
                                 __source: {
                                     fileName: "src/componenets/main-view/nav.jsx",
                                     lineNumber: 16
                                 },
                                 __self: this,
+<<<<<<< HEAD
                                 children: "Log In"
+=======
+                                children: "Sign Up"
+>>>>>>> main
                             })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
@@ -41673,12 +41841,17 @@ function Nav1() {
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+<<<<<<< HEAD
                                 href: "register",
+=======
+                                href: "LogOut",
+>>>>>>> main
                                 __source: {
                                     fileName: "src/componenets/main-view/nav.jsx",
                                     lineNumber: 19
                                 },
                                 __self: this,
+<<<<<<< HEAD
                                 children: "Sign Up"
                             })
                         })
@@ -41729,6 +41902,8 @@ function Nav1() {
                                     lineNumber: 33
                                 },
                                 __self: this,
+=======
+>>>>>>> main
                                 children: "Log Out"
                             })
                         })
@@ -41748,6 +41923,7 @@ $RefreshReg$(_c, "Nav1");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< HEAD
 },{"react/jsx-runtime":"8xIwr","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"cpyQW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -44044,6 +44220,9 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 module.exports = hoistNonReactStatics;
 
 },{"react-is":"5wFcP"}],"SVl5l":[function(require,module,exports) {
+=======
+},{"react/jsx-runtime":"8xIwr","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"SVl5l":[function(require,module,exports) {
+>>>>>>> main
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -44183,6 +44362,11 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+<<<<<<< HEAD
+=======
+var _nav = require("../main-view/nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+>>>>>>> main
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -44190,15 +44374,23 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState("");
     const handleSubmit = (e)=>{
         e.preventDefault();
+<<<<<<< HEAD
         _axiosDefault.default.post("https://my-movie-app1234.herokuapp.com/login", {
+=======
+        _axiosDefault.default.get("https://my-movie-app1234.herokuapp.com/movies", {
+>>>>>>> main
             Username: username,
             Password: password
         }).then((response)=>{
             const data = response.data;
+<<<<<<< HEAD
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', data.user.Username);
             window.location.reload();
             props.onLoggedIn(data);
+=======
+            props.onLoggedIn(username);
+>>>>>>> main
         }).catch((e1)=>{
             console.log('no such user');
         });
@@ -44206,22 +44398,44 @@ function LoginView(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
         __source: {
             fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
             lineNumber: 29
         },
         __self: this,
         children: [
+=======
+            lineNumber: 28
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default, {
+                __source: {
+                    fileName: "src/componenets/login-view/login-view.jsx",
+                    lineNumber: 29
+                },
+                __self: this
+            }),
+>>>>>>> main
             /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
                 controlId: "formUsername",
                 __source: {
                     fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
                     lineNumber: 31
+=======
+                    lineNumber: 30
+>>>>>>> main
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
                             lineNumber: 32
+=======
+                            lineNumber: 31
+>>>>>>> main
                         },
                         __self: this,
                         children: "Username:"
@@ -44233,7 +44447,11 @@ function LoginView(props) {
                         ,
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
                             lineNumber: 33
+=======
+                            lineNumber: 32
+>>>>>>> main
                         },
                         __self: this
                     })
@@ -44243,14 +44461,22 @@ function LoginView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
                     lineNumber: 36
+=======
+                    lineNumber: 35
+>>>>>>> main
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
                             lineNumber: 37
+=======
+                            lineNumber: 36
+>>>>>>> main
                         },
                         __self: this,
                         children: "Password:"
@@ -44262,7 +44488,11 @@ function LoginView(props) {
                         ,
                         __source: {
                             fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
                             lineNumber: 38
+=======
+                            lineNumber: 37
+>>>>>>> main
                         },
                         __self: this
                     })
@@ -44274,6 +44504,7 @@ function LoginView(props) {
                 onClick: handleSubmit,
                 __source: {
                     fileName: "src/componenets/login-view/login-view.jsx",
+<<<<<<< HEAD
                     lineNumber: 40
                 },
                 __self: this,
@@ -44289,6 +44520,12 @@ function LoginView(props) {
                 },
                 __self: this,
                 children: "Register"
+=======
+                    lineNumber: 39
+                },
+                __self: this,
+                children: "Submit"
+>>>>>>> main
             })
         ]
     }));
@@ -44303,7 +44540,11 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< HEAD
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"9briy":[function(require,module,exports) {
+=======
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","axios":"iYoWk","../main-view/nav":"eY3af","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"9briy":[function(require,module,exports) {
+>>>>>>> main
 var $parcel$ReactRefreshHelpers$5dfc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44323,6 +44564,7 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
+<<<<<<< HEAD
 var _reactRouterDom = require("react-router-dom");
 class MovieCard extends _reactDefault.default.Component {
     render() {
@@ -44331,6 +44573,15 @@ class MovieCard extends _reactDefault.default.Component {
             __source: {
                 fileName: "src/componenets/movie-card/movie-card.jsx",
                 lineNumber: 12
+=======
+class MovieCard extends _reactDefault.default.Component {
+    render() {
+        const { movie , onMovieClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
+            __source: {
+                fileName: "src/componenets/movie-card/movie-card.jsx",
+                lineNumber: 11
+>>>>>>> main
             },
             __self: this,
             children: [
@@ -44339,21 +44590,33 @@ class MovieCard extends _reactDefault.default.Component {
                     src: movie.Imagepath,
                     __source: {
                         fileName: "src/componenets/movie-card/movie-card.jsx",
+<<<<<<< HEAD
                         lineNumber: 13
+=======
+                        lineNumber: 12
+>>>>>>> main
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
                     __source: {
                         fileName: "src/componenets/movie-card/movie-card.jsx",
+<<<<<<< HEAD
                         lineNumber: 14
+=======
+                        lineNumber: 13
+>>>>>>> main
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
                             __source: {
                                 fileName: "src/componenets/movie-card/movie-card.jsx",
+<<<<<<< HEAD
                                 lineNumber: 15
+=======
+                                lineNumber: 14
+>>>>>>> main
                             },
                             __self: this,
                             children: movie.Title
@@ -44361,11 +44624,16 @@ class MovieCard extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Text, {
                             __source: {
                                 fileName: "src/componenets/movie-card/movie-card.jsx",
+<<<<<<< HEAD
                                 lineNumber: 16
+=======
+                                lineNumber: 15
+>>>>>>> main
                             },
                             __self: this,
                             children: movie.Description
                         }),
+<<<<<<< HEAD
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                             to: `/movies/${movie._id}`,
                             __source: {
@@ -44382,6 +44650,18 @@ class MovieCard extends _reactDefault.default.Component {
                                 __self: this,
                                 children: "Open"
                             })
+=======
+                        /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            onClick: ()=>onMovieClick(movie)
+                            ,
+                            variant: "link",
+                            __source: {
+                                fileName: "src/componenets/movie-card/movie-card.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: "Open"
+>>>>>>> main
                         })
                     ]
                 })
@@ -44401,7 +44681,11 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< HEAD
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"bj35h":[function(require,module,exports) {
+=======
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"bj35h":[function(require,module,exports) {
+>>>>>>> main
 var $parcel$ReactRefreshHelpers$32c1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44415,6 +44699,7 @@ parcelHelpers.export(exports, "MovieView", ()=>MovieView
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+<<<<<<< HEAD
 var _reactBootstrap = require("react-bootstrap");
 class MovieView extends _reactDefault.default.Component {
     state = {
@@ -44443,11 +44728,20 @@ class MovieView extends _reactDefault.default.Component {
         console.log(this.props);
         const { movies , goBack  } = this.props;
         const { movie  } = this.state;
+=======
+class MovieView extends _reactDefault.default.Component {
+    render() {
+        const { movie , onBackClick  } = this.props;
+>>>>>>> main
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "movie-view",
             __source: {
                 fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                 lineNumber: 23
+=======
+                lineNumber: 7
+>>>>>>> main
             },
             __self: this,
             children: [
@@ -44455,7 +44749,11 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-poster",
                     __source: {
                         fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                         lineNumber: 24
+=======
+                        lineNumber: 8
+>>>>>>> main
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -44464,7 +44762,11 @@ class MovieView extends _reactDefault.default.Component {
                         height: "600",
                         __source: {
                             fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                             lineNumber: 25
+=======
+                            lineNumber: 9
+>>>>>>> main
                         },
                         __self: this
                     })
@@ -44473,7 +44775,11 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-title",
                     __source: {
                         fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                         lineNumber: 27
+=======
+                        lineNumber: 11
+>>>>>>> main
                     },
                     __self: this,
                     children: [
@@ -44481,7 +44787,11 @@ class MovieView extends _reactDefault.default.Component {
                             className: "label",
                             __source: {
                                 fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                                 lineNumber: 28
+=======
+                                lineNumber: 12
+>>>>>>> main
                             },
                             __self: this,
                             children: "Title: "
@@ -44490,7 +44800,11 @@ class MovieView extends _reactDefault.default.Component {
                             className: "value",
                             __source: {
                                 fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                                 lineNumber: 29
+=======
+                                lineNumber: 13
+>>>>>>> main
                             },
                             __self: this,
                             children: movie.Title
@@ -44501,7 +44815,11 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-description",
                     __source: {
                         fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                         lineNumber: 31
+=======
+                        lineNumber: 15
+>>>>>>> main
                     },
                     __self: this,
                     children: [
@@ -44509,7 +44827,11 @@ class MovieView extends _reactDefault.default.Component {
                             className: "label",
                             __source: {
                                 fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                                 lineNumber: 32
+=======
+                                lineNumber: 16
+>>>>>>> main
                             },
                             __self: this,
                             children: "Description: "
@@ -44518,13 +44840,18 @@ class MovieView extends _reactDefault.default.Component {
                             className: "value",
                             __source: {
                                 fileName: "src/componenets/movie-view/movie-view.jsx",
+<<<<<<< HEAD
                                 lineNumber: 33
+=======
+                                lineNumber: 17
+>>>>>>> main
                             },
                             __self: this,
                             children: movie.Description
                         })
                     ]
                 }),
+<<<<<<< HEAD
                 /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                     style: {
                         display: 'flex',
@@ -44727,6 +45054,18 @@ class MovieView extends _reactDefault.default.Component {
                             ]
                         })
                     ]
+=======
+                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                    onClick: ()=>{
+                        onBackClick(null);
+                    },
+                    __source: {
+                        fileName: "src/componenets/movie-view/movie-view.jsx",
+                        lineNumber: 19
+                    },
+                    __self: this,
+                    children: "Back"
+>>>>>>> main
                 })
             ]
         }));
@@ -44738,6 +45077,10 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< HEAD
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"jUTZ8":[function() {},{}]},["aGKSo","L2WT3","dLPEP"], "dLPEP", "parcelRequireaec4")
+=======
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"avObB","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"SVl5l"}],"jUTZ8":[function() {},{}]},["aGKSo","L2WT3","dLPEP"], "dLPEP", "parcelRequireaec4")
+>>>>>>> main
 
 //# sourceMappingURL=index.6701a6e1.js.map
