@@ -1,5 +1,6 @@
-import React from "react";
 import axios from "axios";
+import React from "react";
+import { connect } from "react-redux";
 import { RegistrationView } from "../registration-view/registration-view";
 import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
@@ -7,19 +8,22 @@ import { MovieView } from "../movie-view/movie-view";
 import { Row, Col, Container, Navbar } from "react-bootstrap";
 import Nav1 from "./nav";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { setMovies, setUser } from "../../actions/actions";
+// import MoviesList from '../movies-list/movies-list';
+
 
 
 
 
 // import * as images from "./data";
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
-      selectedMovie: null,
-      registered: null,
+      // movies: [],
+      // selectedMovie: null,
+      // registered: null,
       user: null,
 
     };
@@ -35,12 +39,12 @@ export class MainView extends React.Component {
     }
   }
   getMovies(token) {
-    axios.get("https://my-movie-app1234.herokuapp.com/movies")
+    axios.get('https://my-movie-app1234.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(response => {
         console.log(response.data)
-        this.setState({
-          movies: response.data,
-        });
+        this.props.setMovies(response.data);
       })
       .catch(error => {
         console.log(error);
@@ -90,7 +94,11 @@ export class MainView extends React.Component {
 
 
   render() {
-    const { movies, user, registered } = this.state;
+    // const { movies, user, registered } = this.state;
+    let { movies } = this.props;
+    let { user } = this.state;
+    let localUser = localStorage.getItem('user');
+    console.log(movies);
     // // If the user is on register, show registration view and register
     // if (!registered) { return <RegistrationView onRegisterIn={registered => this.onRegisterIn(registered)} /> }
 
@@ -201,3 +209,7 @@ export class MainView extends React.Component {
     );
   }
 }
+let mapStateToProps = state => {
+  return { movies: state.movies }
+}
+export default connect(mapStateToProps, { setMovies })(MainView);
