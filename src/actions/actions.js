@@ -8,3 +8,13 @@ export function setMovies(value) {
 export function setFilter(value) {
     return { type: SET_FILTER, value };
 }
+
+
+// // this is example code, it's just a draft of our app's state
+// {
+//     visibilityFilter: string,
+//     movies: [
+//       {title, description, image path}
+//       ...
+//     ]
+//   }
