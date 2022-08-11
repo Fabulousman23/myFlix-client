@@ -148,7 +148,7 @@ class MainView extends React.Component {
                   // isFavorite={favoriteMovies.includes(match.params.movieId)}
                   // goBack={history.goBack}
                   // handleFavorite={this.handleFavorite}
-                  movies={this.state.movies}
+                  movies={this.props.movies}
                   movieId={match.params.movieId}
                   goBack={history.goBack}
                 />

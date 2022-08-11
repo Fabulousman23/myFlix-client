@@ -27875,7 +27875,7 @@ class MainView extends _reactDefault.default.Component {
                                         // isFavorite={favoriteMovies.includes(match.params.movieId)}
                                         // goBack={history.goBack}
                                         // handleFavorite={this.handleFavorite}
-                                        movies: this.state.movies,
+                                        movies: this.props.movies,
                                         movieId: match.params.movieId,
                                         goBack: history.goBack
                                     })
@@ -46964,8 +46964,7 @@ class MovieCard extends _reactDefault.default.Component {
 MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string
-    }).isRequired,
-    onMovieClick: _propTypesDefault.default.func.isRequired
+    }).isRequired
 };
 
   $parcel$ReactRefreshHelpers$5dfc.postlude(module);
