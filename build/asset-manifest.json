@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Fabulousman23/myFlix-clientstatic/css/main.3caf18ac.chunk.css",
+    "main.js": "/Fabulousman23/myFlix-clientstatic/js/main.92c3a469.chunk.js",
+    "main.js.map": "/Fabulousman23/myFlix-clientstatic/js/main.92c3a469.chunk.js.map",
+    "runtime-main.js": "/Fabulousman23/myFlix-clientstatic/js/runtime-main.9816c5ef.js",
+    "runtime-main.js.map": "/Fabulousman23/myFlix-clientstatic/js/runtime-main.9816c5ef.js.map",
+    "static/js/2.c5912871.chunk.js": "/Fabulousman23/myFlix-clientstatic/js/2.c5912871.chunk.js",
+    "static/js/2.c5912871.chunk.js.map": "/Fabulousman23/myFlix-clientstatic/js/2.c5912871.chunk.js.map",
+    "index.html": "/Fabulousman23/myFlix-clientindex.html",
+    "static/css/main.3caf18ac.chunk.css.map": "/Fabulousman23/myFlix-clientstatic/css/main.3caf18ac.chunk.css.map",
+    "static/js/2.c5912871.chunk.js.LICENSE.txt": "/Fabulousman23/myFlix-clientstatic/js/2.c5912871.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9816c5ef.js",
+    "static/js/2.c5912871.chunk.js",
+    "static/css/main.3caf18ac.chunk.css",
+    "static/js/main.92c3a469.chunk.js"
+  ]
+}
